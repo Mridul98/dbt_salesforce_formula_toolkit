@@ -7,7 +7,7 @@
     --   destination_database: the database where the view will be created
     --   destination_schema: the schema where the view will be created
     {% if execute %}
-        {{ log('in execute block of create formula views', info=True) }}
+        {{ log('salesforce formula toolkit: in execute block of create formula views', info=True) }}
 
         {% set object_name = salesforce_database ~ '.' ~ salesforce_schema ~ '.' ~ salesforce_table_name %}
         {% set view_name = destination_database ~ '.' ~ destination_schema ~ '.' ~ salesforce_table_name ~ '_formula_model' %}

@@ -8,7 +8,7 @@
     --   salesforce_table_name: the salesforce table name (object) to get the model for
     {% set result = none %}
     {% if execute %}
-        {{ log('in execute block of sfdc_get_model_sql_with_formula_and_rollup_summary_fields',info=True) }}
+        {{ log('salesforce formula toolkit: in execute block of sfdc_get_model_sql_with_formula_and_rollup_summary_fields',info=True) }}
         {%- set model_results = run_query("select MODEL from  " ~ salesforce_database ~ "." ~ salesforce_schema ~ ".fivetran_formula_model where lower(object) = lower('" ~ salesforce_table_name ~ "') ") -%}
         {% set result = model_results.columns[0].values()[0] %}
     {% endif %}
