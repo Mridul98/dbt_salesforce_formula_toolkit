@@ -7,9 +7,9 @@
     --   destination_database: the database where the view will be created
     --   destination_schema: the schema where the view will be created
     {% if execute %}
-        {{ log('salesforce formula toolkit: in execute block of create formula views', info=True) }}
+        {{ log('salesforce formula toolkit: in execute block of create formula sql', info=True) }}
 
-        {% set model_sql = get_model_sql_with_formula_and_rollup_summary_fields(salesforce_database, salesforce_schema, salesforce_table_name) %}
+        {% set model_sql = dbt_salesforce_formula_toolkit.get_model_sql_with_formula_and_rollup_summary_fields(salesforce_database, salesforce_schema, salesforce_table_name) %}
         {% set temp_table_name = salesforce_table_name ~ '_temp_formula_model' %}
 
         {% set final_sql %}
