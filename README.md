@@ -58,9 +58,7 @@ This macro generates SQL that creates a view containing only the formula fields 
 get_salesforce_object_model_sql(
     salesforce_database,
     salesforce_schema,
-    salesforce_table_name,
-    destination_database,
-    destination_schema
+    salesforce_table_name
 )
 ```
 
@@ -71,8 +69,6 @@ get_salesforce_object_model_sql(
 | `salesforce_database` | string | The database name where your Salesforce data is synced (typically by Fivetran) |
 | `salesforce_schema` | string | The schema name where your Salesforce tables are located |
 | `salesforce_table_name` | string | The Salesforce object name (e.g., `account`, `opportunity`, `contact`) |
-| `destination_database` | string | The database where the resulting view will be created |
-| `destination_schema` | string | The schema where the resulting view will be created |
 
 #### Example Usage
 
@@ -88,9 +84,7 @@ Create a new model file (e.g., `models/salesforce_account_formulas.sql`):
 {{ dbt_salesforce_formula_toolkit.get_salesforce_object_model_sql(
     'raw_data',
     'salesforce',
-    'account',
-    'analytics',
-    'marts'
+    'account'
     ) 
 }}
 ```
@@ -119,9 +113,7 @@ This example demonstrates how to create a view for Salesforce Account objects wi
 }}
 {{ dbt_salesforce_formula_toolkit.get_salesforce_object_model_sql(
     '<source_database>', '<source_schema>', 
-    'account', 
-    '<destination_database>', 
-    '<destination_schema>'
+    'account'
     ) 
 }}
 ```
@@ -132,8 +124,6 @@ This example demonstrates how to create a view for Salesforce Account objects wi
 2. Replace the placeholder values:
    - `<source_database>`: Your Fivetran Salesforce database name
    - `<source_schema>`: Your Fivetran Salesforce schema name
-   - `<destination_database>`: Your target analytics database
-   - `<destination_schema>`: Your target analytics schema
 3. Run `dbt run` to create the view
 
 ## How It Works
