@@ -1,10 +1,18 @@
 # dbt Salesforce Formula Toolkit
 
+[![Maintained](https://img.shields.io/badge/maintained%3F-yes-green.svg)](https://github.com/your-org/dbt_salesforce_formula_toolkit)
+[![Future Support](https://img.shields.io/badge/future%20support-committed-blue.svg)](https://github.com/your-org/dbt_salesforce_formula_toolkit)
+
 A comprehensive dbt package for easily creating views of Salesforce objects that include formula and rollup summary fields. This toolkit simplifies the process of exposing Salesforce data with computed fields in your data warehouse.
 
-## Overview
 
-The dbt Salesforce Formula Toolkit provides a macro-based solution to automatically generate SQL models for Salesforce objects, extracting and surfacing formula fields and rollup summary fields that are often needed for analytics and reporting.
+## Motivation
+
+**The Problem:** Fivetran's Salesforce connector does not sync formula fields or rollup summary fields directly to your data warehouse. These computed fields are crucial for accurate reporting and analytics, but users must manually recreate the logic or find workarounds to access them.
+
+**Why This Package?** While the official dbt Salesforce package exists, it currently has several unresolved issues that prevent reliable extraction of formula and rollup summary fields. This toolkit provides a focused, actively maintained solution specifically designed to handle these fields until those issues are resolved in the official package.
+
+**The Solution:** This toolkit automatically generates models that replicate formula fields and rollup summary fields from your Fivetran-synced Salesforce data, making them readily available in your analytics environment without manual formula recreation or complex workarounds.
 
 ## Installation
 
