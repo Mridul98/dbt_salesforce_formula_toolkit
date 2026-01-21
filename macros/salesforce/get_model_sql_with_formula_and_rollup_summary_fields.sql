@@ -1,4 +1,4 @@
-{%- macro sfdc_get_model_sql_with_formula_and_rollup_summary_fields(salesforce_database,salesforce_schema,salesforce_table_name) -%}
+{%- macro get_model_sql_with_formula_and_rollup_summary_fields(salesforce_database,salesforce_schema,salesforce_table_name) -%}
     -- this macro returns the model sql with formula and rollup summary fields included
     -- it looks up the model from the fivetran_formula_model table
     -- if no model is found, it raises a compiler error
